@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>¿Cómo Afecta la Contaminación al Medio Ambiente?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #e0f7fa;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #00796b;
+        }
+        #visualizacion {
+            width: 90%;
+            height: 300px;
+            margin: 20px auto;
+            background: #ffffff;
+            border: 3px solid #00796b;
+            border-radius: 15px;
+            box-shadow: 2px 4px 10px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #555;
+        }
+        button {
+            margin: 10px;
+            padding: 15px 25px;
+            font-size: 16px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            background-color: #4caf50;
+            color: white;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #explicacion {
+            font-size: 18px;
+            margin-top: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>¿Cómo Afecta la Contaminación al Medio Ambiente?</h1>
+    <div id="visualizacion">Escenario inicial limpio 🌳🏞️</div>
+    <div id="explicacion">Este es un entorno natural limpio, lleno de vida.</div>
+
+    <button onclick="siguientePaso()">Paso siguiente ➡️</button>
+    <button onclick="reiniciar()">Nuevo ejemplo 🔄</button>
+    <button onclick="verProcesoCompleto()">Ver todo el proceso ▶️</button>
+
+    <script>
+        let paso = 0;
+        const visual = document.getElementById('visualizacion');
+        const explicacion = document.getElementById('explicacion');
+
+        const pasos = [
+            {
+                texto: 'Escenario inicial limpio 🌳🏞️',
+                explicacion: 'Este es un entorno natural limpio, lleno de vida.'
+            },
+            {
+                texto: 'Llega la contaminación 🚛🏭',
+                explicacion: 'Las fábricas y los vehículos emiten gases y contaminantes.'
+            },
+            {
+                texto: 'Efectos visibles 🌫️💧',
+                explicacion: 'El aire se ensucia, los ríos se contaminan y los animales sufren.'
+            },
+            {
+                texto: 'Consecuencias ⚠️🌍',
+                explicacion: 'La salud de las personas y la biodiversidad están en peligro.'
+            },
+            {
+                texto: '¡Soluciones! ♻️🌱',
+                explicacion: 'Podemos ayudar reciclando, usando bicicleta y plantando árboles.'
+            },
+            {
+                texto: '¡Muy bien! 😊',
+                explicacion: '¡Cuidar el medio ambiente es tarea de todos!'
+            }
+        ];
+
+        function siguientePaso() {
+            if (paso < pasos.length - 1) {
+                paso++;
+                mostrarPaso();
+            }
+        }
+
+        function reiniciar() {
+            paso = 0;
+            mostrarPaso();
+        }
+
+        function verProcesoCompleto() {
+            paso = pasos.length - 1;
+            mostrarPaso();
+        }
+
+        function mostrarPaso() {
+            visual.innerHTML = pasos[paso].texto;
+            explicacion.innerHTML = pasos[paso].explicacion;
+        }
+    </script>
+</body>
+</html>
